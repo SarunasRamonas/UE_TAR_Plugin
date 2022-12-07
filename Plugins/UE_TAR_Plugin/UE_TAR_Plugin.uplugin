@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "UE_TAR_Plugin",
+	"Description": "Simplify the extraction of TAR files into a stream in memory with no dependecy.",
+	"Category": "Other",
+	"CreatedBy": "Sarunas Ramonas",
+	"CreatedByURL": "https://github.com/SarunasRamonas/UE_TAR_Plugin",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "UE_TAR_Plugin",
+			"Type": "Runtime",
+			"LoadingPhase": "PreLoadingScreen"
+		}
+	]
+}
