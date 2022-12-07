@@ -1,0 +1,25 @@
+# IDE directories
+.idea/*
+.vs/*
+
+# Binary Files
+Binaries/*
+Build/*
+Cooked/*
+
+# UE project Files
+Config/*
+Content/*
+
+
+
+# Compiled source files for the engine to use
+Intermediate/*
+Plugins/*/Intermediate/*
+Plugins/*/Binaries/*
+DerivedDataCache/*
+Saved/*
+Source/*
+
+TarExtractor.sln
+TarExtractor.uproject
