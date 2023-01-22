@@ -1,9 +1,12 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "UE_TAR_PluginBPLibrary.h"
+
+#include <vector>
+
 #include "Tar/untar.h"
 
-using namespace untar;
+using namespace UnTar;
 
 UUE_TAR_PluginBPLibrary::UUE_TAR_PluginBPLibrary(const FObjectInitializer& ObjectInitializer)
 : Super(ObjectInitializer)
@@ -16,14 +19,14 @@ void UUE_TAR_PluginBPLibrary::GetTextFromTAR(FString TarFilename, FString TextFi
 	FString Result = TEXT("");
 	
 	char* FilenameInChar =TCHAR_TO_ANSI(*TarFilename);
-	const untar::tarFile* TarFile = new untar::tarFile(FilenameInChar, untar::File);
+	const UnTar::tarFile* TarFile = new UnTar::tarFile(FilenameInChar, UnTar::File);
+
+	const auto It = TarFile->entries.find(string(TCHAR_TO_UTF8(*TextFilename)));
 	
-	auto it = TarFile->entries.find(string(TCHAR_TO_UTF8(*TextFilename)));
-	
-	if (it != TarFile->entries.end())
+	if (It != TarFile->entries.end())
 	{
 		Found = true;
-		untar::tarEntry * data = it->second;
+		UnTar::tarEntry * data = It->second;
 		// Get the ifstream, startbyte and filesize in one call
 		size_t start;
 		int filesize;
@@ -52,4 +55,12 @@ void UUE_TAR_PluginBPLibrary::GetTextFromTAR(FString TarFilename, FString TextFi
 	Text = Result;
 
 	delete(TarFile);
+}
+
+void UUE_TAR_PluginBPLibrary::GetFilenamesInTAR(FString TarFilename, TArray<FString>& OutFileNames, bool& Found)
+{
+	Found = true;
+	
+	
+		
 }

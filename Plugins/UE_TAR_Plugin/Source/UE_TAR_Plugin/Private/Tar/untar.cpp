@@ -1,6 +1,6 @@
 #include "untar.h"
 
-namespace untar {
+namespace UnTar {
 	using namespace std;
 
 	tarEntry::tarEntry()
