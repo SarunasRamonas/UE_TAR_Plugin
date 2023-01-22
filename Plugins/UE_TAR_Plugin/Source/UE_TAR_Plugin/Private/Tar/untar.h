@@ -16,9 +16,8 @@
 #include <string>
 #include <map>
 #include <ios>
-#include <iostream>
 
-namespace untar {
+namespace UnTar {
 	
 	using namespace std;
 
